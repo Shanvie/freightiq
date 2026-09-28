@@ -1,19 +1,26 @@
 {
-  "name": "sih-2",
-  "private": true,
-  "version": "0.0.0",
+  "name": "@shanvie/freightiq",
+  "version": "1.0.0",
+  "description": "FreightIQ maritime decision-support frontend static application",
   "type": "module",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shanvie/freightiq.git"
+  },
+  "homepage": "https://github.com/Shanvie/freightiq#readme",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "oxlint",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "leaflet": "^1.9.4",
-    "react": "^19.2.8",
-    "react-dom": "^19.2.8",
-    "react-leaflet": "^5.0.0"
+    "preview": "vite preview",
+    "prepublishOnly": "npm run build"
   },
   "devDependencies": {
     "@types/leaflet": "^1.9.22",
@@ -21,7 +28,11 @@
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.7",
     "@vitejs/plugin-react": "^6.1.1",
+    "leaflet": "^1.9.4",
     "oxlint": "^1.81.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "react-leaflet": "^5.0.0",
     "typescript": "~6.0.2",
     "vite": "^8.3.0"
   }

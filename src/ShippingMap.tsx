@@ -8,10 +8,11 @@ import {
   useMap,
 } from "react-leaflet";
 import type { LatLngBoundsExpression } from "leaflet";
+import { API_BASE_URL } from "./api-config";
 import "leaflet/dist/leaflet.css";
 import "./ShippingMap.css";
 
-const API = import.meta.env.VITE_API_URL || "http://localhost:8000";
+const API = API_BASE_URL;
 
 type PortCondition = {
   port: string;

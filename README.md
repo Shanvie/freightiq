@@ -26,6 +26,12 @@ Open the Vite URL (normally `http://localhost:5173`). Configure `VITE_API_URL` o
 
 Live AIS vessel positions are optional. Create an AISStream API key and set `AISSTREAM_API_KEY` in the backend `.env` file. Keep it server-side; never expose it through a `VITE_` variable. Restart the API after setting it.
 
+## Frontend npm package
+
+The public npm package `@shanvie/freightiq` distributes the compiled static frontend only; it does not include the FastAPI backend or create hosted infrastructure. Install it with `npm install @shanvie/freightiq`, then copy `node_modules/@shanvie/freightiq/dist/` to a static web host. Set `apiUrl` in the included `freightiq-config.js` to the deployed FreightIQ API URL before serving the files. Leave it empty only when the API is served from the same origin. Configure the API's CORS allowlist for the frontend host.
+
+To build and publish a new version, increment `version` in `package.json`, authenticate to npm, then run `npm publish`. The `prepublishOnly` hook creates the production frontend build; `files` restricts the published tarball to `dist/` and this README.
+
 ## Demo workflow
 
 1. Open **New scenario** and enter a cargo requirement. The form starts with the SIH coal/Australia/Paradip example, 100,000 tonnes, with a December 2026 deadline.

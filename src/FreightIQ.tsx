@@ -1,11 +1,12 @@
 import { lazy, Suspense, useEffect, useState } from "react";
 import type { FormEvent } from "react";
+import { API_BASE_URL } from "./api-config";
 import LiveShipping from "./LiveShipping";
 import "./FreightIQ.css";
 
 const ShippingMap = lazy(() => import("./ShippingMap"));
 
-const API = import.meta.env.VITE_API_URL || "http://localhost:8000";
+const API = API_BASE_URL;
 type Point = {
   date: string;
   freight_usd_tonne: number;

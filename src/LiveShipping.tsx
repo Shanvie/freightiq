@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
+import { API_BASE_URL } from "./api-config";
 import "./LiveShipping.css";
 
-const API = import.meta.env.VITE_API_URL || "http://localhost:8000";
+const API = API_BASE_URL;
 
 type Provider = {
   id: string;
