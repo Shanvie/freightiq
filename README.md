@@ -32,6 +32,14 @@ The public npm package `@shanvie/freightiq` distributes the compiled static fron
 
 To build and publish a new version, increment `version` in `package.json`, authenticate to npm, then run `npm publish`. The `prepublishOnly` hook creates the production frontend build; `files` restricts the published tarball to `dist/` and this README.
 
+The same frontend is also published to **GitHub Packages** by the `Publish frontend to GitHub Packages` workflow on relevant pushes to `main` or via manual workflow dispatch. Install it from GitHub Packages with this project `.npmrc` mapping:
+
+```ini
+@shanvie:registry=https://npm.pkg.github.com
+```
+
+Then run `npm install @shanvie/freightiq`. GitHub Packages may require authentication to install, including for public packages. New GitHub packages start private by default; if public distribution is needed, change the package visibility to public in the linked repository's GitHub Packages settings after the first successful publish.
+
 ## Demo workflow
 
 1. Open **New scenario** and enter a cargo requirement. The form starts with the SIH coal/Australia/Paradip example, 100,000 tonnes, with a December 2026 deadline.
